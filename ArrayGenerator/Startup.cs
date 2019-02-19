@@ -13,6 +13,11 @@ namespace ArrayGenerator
 	/// </summary>
 	public class Startup
 	{
+		/// <summary>
+		/// The URL of the Front End
+		/// Port should be 3000 (might vary on non-Windows environments)
+		/// </summary>
+		private const string WebAppUrl = "http://localhost:3000";
 		public Startup(IConfiguration configuration)
 		{
 			Configuration = configuration;
@@ -30,7 +35,7 @@ namespace ArrayGenerator
 			services.RegisterAssemblyPublicNonGenericClasses(assemblyToScan)
 				//.Where(c => c.Name.EndsWith("Service")) Only add this if we need to exclude certain classes from Dependency Injection
 				.AsPublicImplementedInterfaces();
-
+			services.AddCors(); // Enabled CORS https://stackoverflow.com/questions/44379560/how-to-enable-cors-in-asp-net-core-webapi
 			services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 		}
 
@@ -45,7 +50,9 @@ namespace ArrayGenerator
 			{
 				app.UseHsts();
 			}
-
+			app.UseCors(
+				options => options.WithOrigins(WebAppUrl).AllowAnyMethod()
+			);
 			app.UseHttpsRedirection();
 			app.UseMvc();
 		}
