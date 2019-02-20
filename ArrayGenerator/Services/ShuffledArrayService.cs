@@ -45,7 +45,12 @@ namespace ArrayGenerator.Services
 			return GetArrayWithDynamicMemory(Globals.SmallestNumber, Globals.LargestNumber);
 		}
 
-		/// <inheritdoc />
+		/// <summary>
+		/// Generates a random list of numbers from minimumNumber to maximumNumber using dynamic memory
+		/// </summary>
+		/// <param name="minimumNumber">The minimum number the array should be generated from</param>
+		/// <param name="maximumNumber">The maximum number the array should be generated from</param>
+		/// <returns></returns>
 		private IEnumerable<int> GetArrayWithDynamicMemory(int minimumNumber, int maximumNumber)
 		{
 			if (maximumNumber < minimumNumber)
@@ -56,11 +61,6 @@ namespace ArrayGenerator.Services
 			_arrayShufflerService.FisherYatesShuffleList(list);
 			return list;
 		}
-
-		/// <summary>
-		/// Stores the array that is dynamically created for randomizing
-		/// </summary>
-		private List<int> itemArrayDynamic;
 
 		/// <summary>
 		/// This array allows us to save the processing time to generate a new list

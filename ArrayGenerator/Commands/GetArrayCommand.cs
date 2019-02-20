@@ -15,6 +15,9 @@
 		/// </summary>
 		public int MaximumNumber { get; }
 
+		/// <summary>
+		/// Constructor
+		/// </summary>
 		protected GetArrayCommand(int minimumNumber, int maximumNumber)
 		{
 			MinimumNumber = minimumNumber;

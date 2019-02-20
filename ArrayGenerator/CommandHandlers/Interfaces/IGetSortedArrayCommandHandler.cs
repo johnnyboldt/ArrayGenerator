@@ -11,7 +11,7 @@ namespace ArrayGenerator.CommandHandlers.Interfaces
 		/// <summary>
 		/// Executes a command to get a sorted array
 		/// </summary>
-		/// <param name="getSortedArrayCommand">command to get a sorted array</param>
+		/// <param name="getSortedArrayCommand">Command to get a sorted array</param>
 		/// <returns>A sorted Array</returns>
 		IEnumerable<int> Execute(GetSortedArrayCommand getSortedArrayCommand);
 	}

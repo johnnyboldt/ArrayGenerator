@@ -15,6 +15,10 @@ namespace ArrayGenerator.Services
 			{
 				throw new Exception("The maximumNumber in method GetArray can not be smaller than minimumNumber");
 			}
+			if (minimumNumber == Globals.SmallestNumber && maximumNumber == Globals.LargestNumber)
+			{
+				return Globals.TenThousandItemArraySorted; //Minor Optimization
+			}
 			return Enumerable.Range(minimumNumber, maximumNumber - minimumNumber +1); // +1 because we count each number
 		}
 	}

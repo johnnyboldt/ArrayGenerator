@@ -11,7 +11,7 @@ namespace ArrayGenerator.CommandHandlers.Interfaces
 		/// <summary>
 		/// Executes a command to get a shuffled array
 		/// </summary>
-		/// <param name="getShuffledArrayCommand">command to get a shuffled array</param>
+		/// <param name="getShuffledArrayCommand">Command to get a shuffled array</param>
 		/// <returns>A shuffled Array</returns>
 		IEnumerable<int> Execute(GetShuffledArrayCommand getShuffledArrayCommand);
 	}

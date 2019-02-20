@@ -66,6 +66,7 @@ namespace ArrayGenerator.UnitTests.Services
 
 			// Assert
 			Utils.VerifyArraysAreEqual(array, Globals.TenThousandItemArraySorted);
+			Assert.IsTrue(ReferenceEquals(array, Globals.TenThousandItemArraySorted)); //Checks are actual same object (optimization)
 		}
 
 		[Test]
